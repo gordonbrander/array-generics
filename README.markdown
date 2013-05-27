@@ -6,8 +6,7 @@ A quick and simple polyfill for [Array generic functions](https://developer.mozi
 Array generics allow you to work with any array-like object. For example, how many times have you had to do something like this?
 
     function myFunction() {
-      var args = Array.prototype.slice.call(arguments);
-      var all = ['extra', 'stuff'].concat(args);
+      var rest = Array.prototype.slice.call(arguments, 1);
     }
 
 ![Lame-o](wheresoda.gif)
@@ -17,7 +16,7 @@ The bummer about methods is that they can only work with one type.
 How about this instead?
 
     function myFunction() {
-      var all = Array.concat(['extra', 'stuff'], arguments);
+      var rest = Array.slice(arguments, 1);
     }
 
 ![Not bad](clinty.gif)
